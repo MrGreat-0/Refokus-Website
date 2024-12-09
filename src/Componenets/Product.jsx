@@ -3,12 +3,13 @@ import Button from "./Button";
 
 const Product = ({ product }) => {
   return (
-    <div className="w-full py-20 relative">
-      <div className="max-w-screen-lg mx-auto flex items-center justify-between relative">
+    <div className="w-full p-2 relative">
+      <div className="lg:max-w-screen-lg mx-auto py-12 px-6 w-full sm:h-[100vw] lg:h-auto rounded-xl flex flex-col border lg:border-none lg:flex-row items-center justify-between relative">
         <h1 className="text-6xl capitalize font-semibold">{product.title}</h1>
-        <div className="w-1/4 relative">
-          <p className="mb-4">{product.description}</p>
-          <div className="flex items-center gap-4">
+
+        <div className=" lg:w-1/3 flex flex-col relative">
+          <p className="mb-14 text-lg">{product.description}</p>
+          <div className="flex items-center justify-center lg:justify-start gap-4">
             {product.start && <Button />}
             {product.live && <Button title="Live Website" />}
             {product.case && <Button title="Case Study" />}

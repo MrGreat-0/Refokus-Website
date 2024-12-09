@@ -4,7 +4,7 @@ import Block from "./Block";
 const Blocks = () => {
   return (
     <div className="w-full relative mt-32">
-      <div className="max-w-screen-lg mx-auto flex gap-2 py-20 relative">
+      <div className="max-w-screen-lg mx-auto flex flex-col lg:flex-row gap-2 py-20 px-2 relative">
         <Block
           width={"basis-1/3"}
           start={false}

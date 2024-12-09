@@ -13,10 +13,10 @@ const Block = ({ width, start, para, heading, subheading, hover }) => {
         </div>
         <h1 className="text-3xl mt-5">{subheading}</h1>
       </div>
-      <div className=" relative">
+      <div className="mt-10 sm:m-0 relative">
         {start && (
           <>
-            <h1 className="text-8xl font-bold tracking-tight leading-none">
+            <h1 className="text-7xl sm:text-8xl font-bold tracking-tight leading-none">
               Start a project
             </h1>
             <button className="rounded-full py-2 px-3 font-semibold border-[1px] border-zinc-50 mt-5">

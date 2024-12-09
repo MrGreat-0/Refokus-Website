@@ -30,9 +30,14 @@ const Stripes = () => {
   ];
 
   return (
-    <div className="w-full relative flex items-center border-y-[1px] border-zinc-700 mt-12">
+    <div className="w-full relative grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 border-t-[1px] border-zinc-700 mt-12">
       {data.map((elem, index) => (
-        <Stripe key={index} val={elem} isLast={index === data.length - 1} />
+        <Stripe
+          key={index}
+          val={elem}
+          isLast={index === data.length - 1}
+          shouldHide={index >= data.length - 3}
+        />
       ))}
     </div>
   );

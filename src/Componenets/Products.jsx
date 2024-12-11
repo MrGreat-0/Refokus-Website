@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Product from "./Product";
+import { motion } from "motion/react";
 
 const Products = () => {
   const products = [
@@ -45,11 +46,55 @@ const Products = () => {
     },
   ];
 
+  const [postion, setPosition] = useState(0);
+  const mover = (val) => {
+    setPosition(val * 19);
+  };
+
   return (
     <div className="w-full relative my-32">
       {products.map((elem, index) => (
-        <Product key={index} product={elem} />
+        <Product key={index} product={elem} mover={mover} index={index} />
       ))}
+
+      <div className="absolute top-0 pointer-events-none w-full h-full">
+        <motion.div
+          initial={{ y: postion, x: "-50%" }}
+          animate={{ y: postion + "vw" }}
+          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.6 }}
+          className="window w-[26vw] h-[19vw] bg-white absolute left-[42%] overflow-hidden"
+        >
+          <motion.div
+            animate={{ y: -postion + "vw" }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-sky-100"
+          ></motion.div>
+
+          <motion.div
+            animate={{ y: -postion + "vw" }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-sky-200"
+          ></motion.div>
+
+          <motion.div
+            animate={{ y: -postion + "vw" }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-sky-300"
+          ></motion.div>
+
+          <motion.div
+            animate={{ y: -postion + "vw" }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-sky-400"
+          ></motion.div>
+
+          <motion.div
+            animate={{ y: -postion + "vw" }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-sky-500"
+          ></motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };

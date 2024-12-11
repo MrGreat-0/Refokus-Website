@@ -41,11 +41,18 @@ const Marquees = () => {
     ],
   ];
 
+  // console.log(images);
+
   return (
-    <div className="w-full relative py-10">
+    <div className="w-full relative pt-10">
       {images.map((elem, index) => (
-        <Marquee key={index} elem={elem} />
+        <Marquee
+          key={index}
+          elem={elem}
+          direction={index === 0 ? "left" : "right"}
+        />
       ))}
+      <div className="absolute top-[60%] -translate-y-1/2 left-0 h-2/3 w-full bg-gradient-to-r from-[#18181b] via-transparent to-[#18181b]"></div>
     </div>
   );
 };

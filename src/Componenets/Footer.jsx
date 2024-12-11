@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full relative">
+    <div className="w-full relative ">
       <div className="max-w-screen-lg mx-auto flex justify-between items-center flex-col-reverse lg:flex-row pb-20 px-2 relative">
         <div className="f-left lg:basis-3/5 relative flex flex-col ">
           <h1 className="text-[26vw] sm:text-[10.5rem] font-bold tracking-tight mt-10 lg:m-0">

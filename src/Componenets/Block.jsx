@@ -4,9 +4,9 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 const Block = ({ width, start, para, heading, subheading, hover }) => {
   return (
     <div
-      className={`${width} ${hover} bg-zinc-800 p-5 rounded-xl min-h-[60vh] flex flex-col justify-between relative`}
+      className={`group ${width} ${hover} transition-all ease-in-out duration-500 bg-zinc-800 p-5 rounded-xl min-h-[60vh] flex flex-col justify-between relative`}
     >
-      <div className="w-full relative">
+      <div className="w-full relative group-hover:px-2 transition-all ease-in-out duration-500">
         <div className="w-full flex justify-between items-center relative">
           <h3>{heading}</h3>
           <IoIosArrowRoundForward />

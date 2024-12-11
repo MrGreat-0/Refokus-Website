@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { useScroll } from "motion/react";
 
 const Work = () => {
-  const images = [
+  const [images, setImages] = useState([
     {
       url: "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d8c8de92be5a9bdae6f1_Layout%20Land%20-%2016%209%20(A)-p-1080.webp",
       top: "50%",
@@ -34,11 +35,50 @@ const Work = () => {
     },
     {
       url: "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d6dab55cd38f78a07f92_Summon%20-%2016%209%20(A)-p-1080.webp",
-      top: "65%",
-      left: "55%",
+      top: "70%",
+      left: "50%",
       isActive: false,
     },
-  ];
+  ]);
+
+  const { scrollYProgress } = useScroll();
+
+  scrollYProgress.on("change", (data) => {
+    // console.log(Math.floor(data * 100));
+    function showImage(arr) {
+      setImages((prev) => {
+        return prev.map((item, index) => {
+          return arr.indexOf(index) === -1
+            ? { ...item, isActive: false }
+            : { ...item, isActive: true };
+        });
+      });
+    }
+
+    switch (Math.floor(data * 100)) {
+      case 0:
+        showImage([]);
+        break;
+      case 1:
+        showImage([0]);
+        break;
+      case 2:
+        showImage([0, 1]);
+        break;
+      case 4:
+        showImage([0, 1, 2]);
+        break;
+      case 6:
+        showImage([0, 1, 2, 3]);
+        break;
+      case 8:
+        showImage([0, 1, 2, 3, 4]);
+        break;
+      case 10:
+        showImage([0, 1, 2, 3, 4, 5]);
+        break;
+    }
+  });
 
   return (
     <div className="w-full relative">
@@ -52,7 +92,7 @@ const Work = () => {
               elem.isActive && (
                 <img
                   key={index}
-                  className="w-60 absolute -translate-x-1/2 -translate-y-1/2 rounded-lg"
+                  className="h-[30vw] sm:h-48 md:h-52 lg:h-56 xl:h-60 absolute -translate-x-1/2 -translate-y-1/2 rounded-lg"
                   style={{ top: elem.top, left: elem.left }}
                   src={elem.url}
                   alt="image"

@@ -4,7 +4,7 @@ import Block from "./Block";
 const Blocks = () => {
   return (
     <div className="w-full relative mt-32">
-      <div className="max-w-screen-lg mx-auto flex flex-col lg:flex-row gap-2 py-20 px-2 relative">
+      <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-2 py-20 px-7 relative">
         <Block
           width={"basis-1/3"}
           start={false}
@@ -28,7 +28,7 @@ const Blocks = () => {
               together
             </>
           }
-          hover={"hover:bg-violet-500"}
+          hover={"hover:bg-[#7443ff]"}
         />
       </div>
     </div>

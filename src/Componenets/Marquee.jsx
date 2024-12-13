@@ -11,7 +11,13 @@ const Marquee = ({ elem, direction }) => {
         className="flex flex-shrink-0 py-8 gap-20 px-10 relative"
       >
         {elem.map((url, index) => (
-          <img key={index} className="h-6" src={url} alt="logo" />
+          <img
+            key={index}
+            className="h-6"
+            src={url}
+            alt="logo"
+            loading="lazy"
+          />
         ))}
       </motion.div>
       <motion.div
@@ -21,7 +27,13 @@ const Marquee = ({ elem, direction }) => {
         className="flex flex-shrink-0 py-8 gap-20 px-10 relative"
       >
         {elem.map((url, index) => (
-          <img key={index} className="h-6" src={url} alt="logo" />
+          <img
+            key={index}
+            className="h-6"
+            src={url}
+            alt="logo"
+            loading="lazy"
+          />
         ))}
       </motion.div>
     </div>

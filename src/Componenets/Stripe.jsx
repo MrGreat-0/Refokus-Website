@@ -9,7 +9,7 @@ const Stripe = ({ val, isLast, shouldHide }) => {
           : "border-b-[1px] border-r-[1px] border-zinc-700"
       } ${shouldHide ? "hidden xl:flex" : ""} `}
     >
-      <img className="min-h-[26px]" src={val.url} alt="logo" />
+      <img className="min-h-[26px]" src={val.url} alt="logo" loading="lazy" />
       <span className="font-semibold text-xl">{val.number}</span>
     </div>
   );

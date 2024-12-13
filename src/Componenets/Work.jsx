@@ -96,6 +96,7 @@ const Work = () => {
                   style={{ top: elem.top, left: elem.left }}
                   src={elem.url}
                   alt="image"
+                  loading="lazy"
                 />
               )
           )}
